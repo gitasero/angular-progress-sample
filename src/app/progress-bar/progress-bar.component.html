@@ -2,3 +2,8 @@
 <!--div class="progress" style="width: 20%">20%</div-->
 <div class="progress" [style.width.%]="progressBar">{{ progressBar }}%</div>
 </div>
+
+<button 
+  [disabled]="this.progressBar >= 100"
+  (click)="onClick($event)">+{{ increment }}
+</button>

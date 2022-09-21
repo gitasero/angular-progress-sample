@@ -1,6 +1,9 @@
 <div style="text-align:center">
 <h1>
-  Progress: {{ progress }}%
+Progress: <span>{{ progress }}%</span>
 </h1>
-<app-progress-bar [progressBar]="progress">></app-progress-bar>
+<app-progress-bar 
+  [progressBar]="progress"
+  (progressChange)="updateProgress($event)"
+></app-progress-bar>
 </div>

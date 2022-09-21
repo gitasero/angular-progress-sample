@@ -10,22 +10,13 @@ export class AppComponent  {
   progress = 0;
 
   ngOnInit(): void {
-    this.updateProgress(6);
+    setTimeout(() => {
+      this.progress = 20;
+    }, 500);
   }
+
   updateProgress(value: number): void {
-    if (this.progress >= 100 || value === 0) {
-      return;
+        this.progress += value;
     }
-    const delta = 100 - this.progress;
-
-    if (value > delta) {
-      value = delta;
-    }
-
-    setTimeout(() => { 
-      this.progress += value; 
-      this.updateProgress(value); 
-    }, 200);
-  }
-
+    
 }
