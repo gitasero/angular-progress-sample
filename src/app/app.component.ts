@@ -10,9 +10,9 @@ export class AppComponent  {
   progress = 0;
 
   ngOnInit(): void {
-    this.updateProgress(6);
+    /*this.updateProgress(6); */
   }
-  updateProgress(value: number): void {
+  updateProgressOld(value: number): void {
     if (this.progress >= 100 || value === 0) {
       return;
     }
@@ -26,6 +26,10 @@ export class AppComponent  {
       this.progress += value; 
       this.updateProgress(value); 
     }, 200);
+  }
+
+  updateProgress(value: number): void {
+    this.progress += value;
   }
 
 }
